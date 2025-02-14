@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% block cards %}
+	<div class="container p-5">
+        <h1 class="text-center pb-4">Meal list</h1>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
+          {% for meal in meals %}
+          <div class="col">
+            <div class="card">
+              <img src="{{ meal.strMealThumb }}" class="card-img-top" alt="{{ meal.strMeal }}">
+              <div class="card-body">
+                <h5 class="card-title">{{ meal.strMeal }}</h5>
+                <p class="card-text">
+                    This is a longer card with supporting text
+                    below as a natural lead-in to additional
+                    content. This content is a little bit longer.
+                </p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      
+{% endblock cards %}
