@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+        h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #555;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><a href="/">Go back</a></h1>
+        <br>
+        <h1>From GFG</h1>
+
+        <h2>Length of data {{check_length}} is: {{check_length | length}}</h2>
+        <h2>Adding 2 to {{int}} = {{int | add:"2"}}</h2>
+        <h2>Adding slashes to "I'm Tahsin" ===> "{{"I'm Tahsin" | addslashes}}"</h2>
+
+        <h2>Capfirst 'tahsin': {{'tahsin' | capfirst}}</h2>
+        <h2>Centering a field value: "{{"Suii" | center:"500"}}"</h2>
+        <h2>“String with spaces” ==> {{"String with spaces" | cut:" "}}</h2>
+
+        <h2>Today is: {{Today | date:"D d M Y"}}</h2>
+
+        <h2>Sorted dictionary using dicsort: {{dictionary | dictsort:"age"}}</h2>
+
+        <h2>Divisible or not</h2>
+        <li>9 / 3 {{ 9 | divisibleby:"3" }}</li>
+        <li>7 / 3 {{ 7 | divisibleby:"3" }}</li>
+
+        <h2>File size format (to human readable) 123456789 to {{ 123456789 | filesizeformat }}</h2>
+        <h2>First element of {{check_length}} is :  {{ check_length | first }}</h2>
+
+        <h2>Various filteing : </h2>
+        <li>{{ check_length | join:" // " }}</li>
+        <li>{{ check_length | slice:":2" }}</li>
+
+        <li>{{ text | linenumbers }}</li>
+        <li>{{ name | lower }}</li>
+        <li>{{ name | make_list }}</li>
+        <li>{{ "String with spaces" | slugify }}</li>
+
+        <li>{{ Today | time:"H:i"}}</li>
+        <li>Time since : {{ from | timesince:Today}}</li>
+    </div>
+    <br>
+    <div class="container">
+        <h1>From EARHTLY</h1>
+        <h2> Title without spaces: {{ "String with spaces" | cut:" "}} </h2>
+		<h2> Truncated after 16 characters: {{ "String with spaces" | truncatechars:10}} </h2>
+		<h2> Truncated after 5 words: {{ text | truncatewords:5}} </h2>
+		<h2> Word count "MD. Tahsin Ferdous" : {{ 'MD. Tahsin Ferdous' | wordcount}} </h2>
+        <h2> Striptags : {{ '<b>This</b> is <em>a</em> <button>Button</button>' | striptags }} </h2>
+		<h2> You have 10 message{{ "10" | pluralize }}</h2>
+    </div>
+</body>
+</html>
